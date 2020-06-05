@@ -5,7 +5,7 @@ const {
 
 
 
-const printPassTimes = function(passTimes) {
+ const printPassTimes = function(passTimes) {
   for (const pass of passTimes) {
     let datetime = new Date(1)
     datetime.setUTCSeconds(pass.risetime);
@@ -15,10 +15,14 @@ const printPassTimes = function(passTimes) {
   }
 };
 
-nextISSTimesForMyLocation((error, passTimes) => {
-  if (error) {
-    return console.log("It didn't work!", error);
-  }
-  // success, print out the deets!
-  printPassTimes(passTimes);
-});
+// nextISSTimesForMyLocation((error, passTimes) => {
+//   if (error) {
+//     return console.log("It didn't work!", error);
+//   }
+//   // success, print out the deets!
+//   printPassTimes(passTimes);
+// });
+
+module.exports = {
+  printPassTimes
+}
